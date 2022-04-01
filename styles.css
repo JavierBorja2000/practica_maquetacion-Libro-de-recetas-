@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+    color: #1e3e4b;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #FAF8F7;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+main{
+    position:relative;
+    background: #FAF8F7;
+}
+
+.header{
+    position:sticky;
+    top: 0;
+    padding: 7px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background: white;
+    height: 40px;
+    z-index: 100;
+}
+.titulo{
+    font-weight:791;
+    letter-spacing:0.5px;
+}
+.panel-btn{
+    display:none;
+}
+
+.navigation {    
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    font-size: 1rem;
+}
+
+.navigation li {
+    margin-left: 2px;
+    padding: .5rem;
+    border-radius: 3px;
+    transition: all .3s;
+}
+
+.navigation a{
+    display: inline-block;
+    padding: 0.61rem;
+    color:#1e3e4b;
+    text-decoration: none;
+}
+
+.navigation li:hover {
+   background: #ff9800;
+   color:white;
+}
+.navigation li:hover a{
+    color:white;
+ }
+
+.wrapper{
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.principal{
+    position: relative;
+    width:100%;
+    height: calc(100vh - 40px);
+    overflow-y: hidden;
+}
+
+.imagen-principal{
+    background-image: url(https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/coffee-beans.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+}
+.Frase_principal{
+    /*border: 1px solid green;*/
+    position: absolute;
+    margin: 0 auto;
+    width: 55%;
+    height: 80px;
+    left: calc(50% - 55%/2);
+    top: calc(50% - 80px);
+    text-align:center;
+    z-index: 20;
+}
+.Frase_principal .imagen-principal{
+    z-index: 1;
+}
+
+.Frase_principal h2{
+    font-size: 3.5rem;
+    color: rgba(247, 237, 247, 0.95);
+}
+.btn-comparteReceta{
+    margin-top: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    background:  #ff9800;
+    font-weight: 550;
+    letter-spacing:0.3px;
+    color: white;
+    border: none;
+    outline: none;
+    transition: all .3s;
+}
+.btn-comparteReceta:hover{
+    font-weight: 550;
+    box-shadow: 0 0 2px #ff9800, 0 0 15px #ff9800, 0 0 25px #ff9800, 0 0 25px #ff9800;
+}
+.principal-capa{
+    position: absolute;
+    left: 0;
+    right:0;
+    top:0;
+    bottom: 0;
+    background: black;
+    opacity: 0.5;
+    z-index: 10;
+}
+
+
+.contenedor_tabla{
+    border: 0.5px solid #BABABB;
+    min-width: 250px;
+    max-width: 350px;
+    height: 220px;
+    margin: 20px auto 0;
+    border-radius: 15px;
+    overflow:hidden;
+}
+.contenedor_tabla .tabla{
+    
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor_tabla td{
+    width: 34.3%;
+    padding: 7px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    background-color: #FFF;
+    text-align: center;
+    color: #BABABB;
+    border-right:0.5px solid #BABABB;
+}
+.tabla_encabezado td{
+    color: #1e3e4b;
+    text-align: center;
+    border-bottom:0.5px solid #BABABB;
+    border-right:0.5px solid #BABABB;
+}
+.contenedor_tabla td a{
+    color: #BABABB;
+}
+
+
+.recetario{
+    margin-top: 25px;
+    padding:0px 30px;
+}
+.recetario h2{
+    font-size: 1.9rem;
+}
+
+.recetario-item{
+    margin: 15px 0;
+    width: 100%;
+    display: flex;
+    gap: 15px
+    
+}
+
+.recetario-item h3{
+   font-size: 1.4rem;
+}
+.recetario-item__info{
+   width: 50%;
+   padding:11px 0 0;
+}
+.recetario-item__info.par{
+    order:2
+}
+
+.recetario-item__info ul{
+   display:flex;
+   flex-direction: column;
+   justify-content: space-around;
+   height:54%;
+    padding: 10px 15px;
+   font-size: 1.2rem;
+}
+.recetario-item__img{
+   width: 50%;
+   border-radius: 20px;
+   overflow:hidden;
+}
+
+.recetario-item__img img{
+    width: 100%;
+ }
+
+.footer{
+   display:flex;
+   justify-content: end;
+   align-items: center;
+   padding: 0 20px;
+   height: 10vh;
+   background: black ;
+   text-align: center;
+   
+}
+.footer p{
+   line-height: 100%;
+   color: #ff9800;
+   font-size: 0.9rem;
+}
+
+@media screen and (max-width: 525px){
+    .panel-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        width: 35px;
+        height: 35px;
+    }
+
+    .panel-btn span, .panel-btn span::after, .panel-btn span::before{
+        width: 100%;
+    }
+
+    .panel-btn.is-active{
+        z-index: 100;
+    }
+
+    .navigation {
+        position: fixed;
+        z-index: 8;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 5rem 0;
+        font-size: 2rem;
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.9);
+        transition: transform .5s ease;
+        /* animacion */
+        transform: translate(100%, 0);
+    } 
+    
+    .navigation.is-active {
+        transform: translate(0,0);
+    }
+
+    .recetario-item {
+        margin: 20px 0;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recetario-item__info {
+        width: 100%;
+    }
+
+    .recetario-item__info.par{
+        order:0
+    }
+
+    .recetario-item__img {
+        width: 70%;
+    }
+
+    .Frase_principal h2{
+        font-size: 2.6rem;
+    }
+}
